@@ -1,0 +1,23 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp">
+
+        <Button
+            android:id="@+id/permissionbutton"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:text="@string/storagePermission" />
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/settings"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+
+    </FrameLayout>
+
+</LinearLayout>

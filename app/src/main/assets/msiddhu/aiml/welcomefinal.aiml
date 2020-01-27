@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="1.0" encoding="UTF-8">
+
+    <category>
+        <pattern>*</pattern>
+        <template>
+<random>
+            <li>Sorry i don'tunderstand.</li>
+   <li>I have no answer for that.</li>
+            <li>What was that?</li>
+</random>
+        </template>
+    </category>
+    <category>
+        <pattern>HI</pattern>
+        <template>
+<random>
+<li>Hello</li>
+<li>Whats up!</li>
+<li>Hey</li>
+<li>Hi,What can i do for you?</li>
+<li>Hi</li>
+</random>
+        </template>
+    </category>
+    <category>
+        <pattern>HELLO</pattern>
+        <template>
+            <srai>HI</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>HII</pattern>
+        <template>
+            <srai>HI</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>HEY</pattern>
+        <template>
+            <srai>HI</srai>
+        </template>
+    </category>
+
+<category>
+        <pattern>assist me</pattern>
+        <template>At present i can assist you for the following diseases :-
+		   1)Headache
+		   2)Stomach pain 
+		   3)cough
+		   4)allergy
+		   5)cold
+		   6)mouth ulcer/sores
+		   7)exit
+                   Enter the serial number of the disease which you have or 7 to exit : </template>
+    </category>
+
+<category>
+        <pattern># help #</pattern>
+        <template>
+            <srai>assist me</srai>
+        </template>
+    </category>
+
+<category>
+        <pattern># assistance #</pattern>
+        <template>
+            <srai>assist me</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern># 1 #</pattern><that>_ disease which you *</that>
+        <template>
+            <srai>i have a headache help</srai>
+        </template>
+    </category>
+
+   <category>
+        <pattern># 2 #</pattern><that>_ disease which you *</that>
+        <template>
+            <srai>i have a Stomach pain help</srai>
+        </template>
+    </category>
+
+<category>
+        <pattern># 3 #</pattern><that>_ disease which you *</that>
+        <template>
+            <srai>i have a cough help</srai>
+        </template>
+    </category>
+
+<category>
+        <pattern># 4 #</pattern><that>_ disease which you *</that>
+        <template>
+            <srai>i have a allergy help</srai>
+        </template>
+    </category>
+
+<category>
+        <pattern># 5 #</pattern><that>_ disease which you *</that>
+        <template>
+            <srai>i have a cold help</srai>
+        </template>
+    </category>
+
+<category>
+        <pattern># 6 #</pattern><that>_ disease which you *</that>
+        <template>
+            <srai>i have a mouth ulcer help</srai>
+        </template>
+    </category>
+
+<category>
+        <pattern># 7 #</pattern><that>_ disease which you *</that>
+        <template>
+            <srai>77777</srai>
+        </template>
+    </category>
+
+    <category>
+        <pattern>77777</pattern>
+        <template>Consult a doctor if you have any other problem for now .In future i will update myself to be much helpful.
+        </template>
+    </category>
+
+    <category>
+        <pattern>WHATS UP</pattern>
+        <template>
+            <srai>HI</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>HELLO *</pattern>
+        <template>
+            <srai>HI</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>HII</pattern>
+        <template>
+            <srai>HI</srai>
+        </template>
+    </category>
+    <category>
+        <pattern>HI *</pattern>
+        <template>
+            <srai>HI</srai>
+        </template>
+    </category>
+ <category>
+        <pattern>GOOD MORNING</pattern>
+        <template>
+            Good morning,have a nice day!
+        </template>
+    </category>
+
+
+ <category>
+        <pattern>GD MRNG</pattern>
+        <template>
+            <srai>GOOD MORNING</srai>
+        </template>
+    </category>
+
+ <category>
+        <pattern>GM</pattern>
+        <template>
+            <srai>GOOD MORNING</srai>
+        </template>
+    </category>
+
+ <category>
+        <pattern>GOOD AFTERNOON</pattern>
+        <template>
+            Good afternoon!
+        </template>
+    </category>
+
+ <category>
+        <pattern>GD AFTRN</pattern>
+        <template>
+            <srai>GOOD AFTERNOON</srai>
+        </template>
+    </category>
+
+
+ <category>
+        <pattern>GA</pattern>
+        <template>
+            <srai>GOOD AFTERNOON</srai>
+        </template>
+    </category>
+
+<category>
+        <pattern>GOOD EVENING</pattern>
+        <template>
+            Good evening,have a nice evening!
+        </template>
+    </category>
+
+
+ <category>
+        <pattern>GD EVNG</pattern>
+        <template>
+            <srai>GOOD EVENING</srai>
+        </template>
+    </category>
+
+ <category>
+        <pattern>GE</pattern>
+        <template>
+            <srai>GOOD EVENING</srai>
+        </template>
+    </category>
+
+
+<category>
+        <pattern>GOOD NIGHT</pattern>
+        <template>
+            Good night,Sweet dreams.
+        </template>
+    </category>
+
+
+<category>
+        <pattern>GN</pattern>
+        <template>
+            <srai>GOOD NIGHT</srai>
+        </template>
+    </category>
+
+
+  <category>
+    <pattern>HOW ARE YOU </pattern>
+    <template>
+I am doing great,thanks for asking.What can I help you with?
+    </template>
+   </category>
+
+ <category>
+    <pattern>HOW ARE YOU *</pattern>
+    <template>
+<srai>HOW ARE YOU</srai>
+    </template>
+   </category>
+
+  <category>
+    <pattern>HOW ARE YOU DOING</pattern>
+    <template>
+<srai>HOW ARE YOU</srai>
+    </template>
+   </category>
+
+  <category>
+    <pattern>HOW  R U</pattern>
+    <template>
+<srai>HOW ARE YOU</srai>
+    </template>
+   </category>
+
+  <category>
+    <pattern>GREAT</pattern>
+    <template>
+nice :)
+    </template>
+   </category>
+
+  <category>
+    <pattern>FINE</pattern>
+    <template>
+<srai>GREAT</srai>
+    </template>
+   </category>
+
+  <category>
+    <pattern>GOOD</pattern>
+    <template>
+<srai>GREAT</srai>
+    </template>
+   </category>
+
+    <category>
+        <pattern>WHO ARE YOU</pattern>
+        <template>
+            I am a health assitant to assist you.
+        </template>
+    </category>
+    <category>
+        <pattern>WHAT IS YOUR NAME</pattern>
+        <template>
+            currently i have no name..for now
+        </template>
+    </category>
+    <category>
+        <pattern>MY NAME IS *</pattern>
+        <template>
+            <think><set name="name"><star/></set></think>
+    Ok,i will try to remember.
+        </template>
+    </category>
+    <category>
+        <pattern>WHAT IS MY NAME</pattern>
+        <template>
+            your name is <get name="name"/>
+        </template>
+    </category>
+    <category>
+        <pattern>I AM * YEARS OLD</pattern>
+        <template>
+            <think><set name="age"><star/></set></think>
+    Ok,i will try to remember.
+        </template>
+    </category>
+    <category>
+        <pattern>WHAT IS MY AGE</pattern>
+        <template>
+            You are <get name="age"/> years old.
+        </template>
+    </category>
+
+
+</aiml>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+ 
+   
+   <category>
+      <pattern> # mouth ulcer # </pattern><template>Ok.Let me help you with your ulcer. Please answer the following questions.(Press ok to continue)<think><set name = "topic"> mouth ulcer</set></think></template>  
+   </category>
+   <category> 
+       <pattern> # sores #</pattern><template><srai> # mouth ulcer #</srai></template>
+      </category>
+   <topic name = " mouth ulcer">
+      <category>
+               <pattern> # ok # </pattern>
+               <template>How long has this been troubling you 
+                                                       1.Less than one day
+                                                       2.One day to one week
+                                                       3.One week to one month
+                                                       4.More than one month.... Select any number:</template>
+        </category>
+      
+      <category>
+               <pattern>4</pattern><template>It might be a severe problem .Consult to a doctor as soon as possible.</template>
+      </category>
+      
+      <category> 
+               <pattern>2</pattern><template>How would you describe the intensity of your Stomach pain (mild,moderate,severe)</template>
+      </category> 
+      
+      <category>
+               <pattern>3</pattern><template><srai>4</srai></template>
+      </category>
+      
+      <category>
+               <pattern>1</pattern><template><srai>2</srai></template>
+      </category>
+      
+      <category>
+               <pattern>severe</pattern><that>_ intensity *</that><template><srai>4</srai></template>
+      </category> 
+      
+      <category>
+               <pattern>mild</pattern><that>_ intensity *</that><template><srai>moderate</srai></template>
+      </category> 
+      
+      <category>
+               <pattern>moderate</pattern><that>_ intensity *</that><template>is that sore painful(yes/no)</template>
+      </category> 
+      <category>
+               <pattern>yes</pattern><that>_ painful *</that><template>do u have any blisters in ur mouth(yes/no)</template>
+      </category> 
+      <category>
+               <pattern>no</pattern><that>_ painful *</that><template>do u have any blisters in ur mouth(yes/no)</template>
+      </category> 
+      <category>
+               <pattern>yes</pattern><that>_ blisters in *</that><template>r blisters painful(yes/no)</template>
+      </category> 
+      <category>
+               <pattern>no</pattern><that>_ blisters in *</that><template>r blisters painful(yes/no)</template>
+      </category> 
+    
+     <category>
+               <pattern>yes</pattern><that>_ blisters painful *</that><template>do u have sore throat(yes/no)</template>
+      </category> 
+      <category>
+               <pattern>no</pattern><that>_ blisters painful *</that><template>do u have sore throat(yes/no)</template>
+      </category> 
+   
+      <category>
+               <pattern>yes</pattern><that>_ have sore *</that><template>do u noticed  change in voice(yes/no)</template>
+      </category> 
+      <category>
+               <pattern>no</pattern><that>_ have sore *</that><template>do u noticed  change in voice(yes/no)</template>
+      </category>
+      <category>
+               <pattern>yes</pattern><that>_ noticed  change *</that><template>is ur voice hoarse(yes/no)</template>
+      </category>
+      <category>
+               <pattern>no</pattern><that>_ noticed  change *</that><template>is ur voice hoarse(yes/no)</template>
+      </category>
+      <category>
+               <pattern>yes</pattern><that>_ voice hoarse *</that><template>this is a symptom for laryngeal contact ulcers ...use some antacids as a basic medication and contact doctor for better treatment....</template>
+      </category>
+      
+      <category>
+              <pattern>no</pattern><that>_ voice hoarse *</that><template>These are symptoms for "canker sore" use the following as primary medicine(steroid and ani-inflammatory)</template>
+      </category>
+      
+    </topic>
+   
+</aiml>

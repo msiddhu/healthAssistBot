@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+    
+   <category>
+      <pattern> # Cough # </pattern><template>Ok.Let me help you with your cough . Please answer the following questions.(Press ok to continue)<think><set name = "topic">Cough</set></think></template>  
+   </category>
+   
+   <topic name = "Cough">
+      <category>
+               <pattern> # ok # </pattern>
+               <template>How long has this been troubling you    
+                                                       1.Less than one day   
+                                                       2.One day to one week   
+                                                       3.One week to one month   
+                                                       4.More than one month.... Select any number:</template>
+      </category>
+      
+      <category>
+               <pattern>4</pattern><template>for primary treatment ..... use a humidifier to make the air moist, or breathe steam from a hot shower or teakettle before bed.
+Raise your head up a bit with an extra pillow.   Try a saline or saltwater nose spray.   Sip warm tea or soup.It might be a severe problem .Consult to a doctor as soon as possible.... </template>
+      </category>
+      
+      <category>
+               <pattern>2</pattern><template>How would you describe the intensity of your cough (mild,moderate,severe)</template>
+      </category> 
+      
+      <category>
+               <pattern>3</pattern><template><srai>2</srai></template>
+      </category>
+      
+      <category>
+               <pattern>1</pattern><template><srai>2</srai></template>
+      </category>
+      
+      <category>
+               <pattern>severe</pattern><that>_ intensity *</that><template><srai>4</srai></template>
+      </category> 
+      
+      
+      <category>
+               <pattern>mild</pattern><that>_ intensity *</that><template>Are you having running nose(yes/no)</template>
+      </category> 
+      
+      <category>
+                <pattern>yes</pattern><that>_ running nose *</that><template>Are you coughing up mucus(yes/no)</template>
+      </category>
+      <category>
+                <pattern>no</pattern><that>_ running nose *</that><template>Are you coughing up mucus(yes/no)</template>
+      </category>
+      
+       <category>
+                <pattern>Yes</pattern><that>_ up mucus *</that><template>Are you coughing up blood(yes/no)</template>
+      </category>
+       <category>
+                <pattern>no</pattern><that>_ up mucus *</that><template>Are you coughing up blood(yes/no)</template>
+      </category>
+      
+       <category>
+                <pattern>yes</pattern><that>_ up blood *</that><template>These are symptoms of hematemesis,use drugs that contain Somatostatin and its analogue octreotide. Tranexamic acid.</template>
+      </category>
+      <category>
+                <pattern>no</pattern><that>_ up blood *</that><template>do u have sore throat (yes/no)</template>
+        </category>
+      
+      <category>
+        
+               <pattern>yes</pattern><that>_ sore throat *</that><template>r u having heart burn (yes/no)</template>
+      </category>
+      <category>
+        
+               <pattern>no</pattern><that>_ sore throat *</that><template>r u having heart burn (yes/no)</template>
+      </category>
+      <category>
+        
+               <pattern>yes</pattern><that>_ heart burn *</that><template>do u have fever (yes/no) </template>
+      </category>
+      <category>
+        
+               <pattern>no</pattern><that>_ heart burn *</that><template>do u have fever (yes/no)</template>
+      </category>
+      <category>
+        
+               <pattern>yes</pattern><that>_ have fever *</that><template>r u having difficulty swallowing  or coughing when swallowing(yes/no)</template>
+      </category>
+      <category>
+        
+               <pattern>no</pattern><that>_ have fever *</that><template>r u having difficulty swallowing  or coughing when swallowing(yes/no)</template>
+      </category>
+      <category>
+        
+               <pattern>yes</pattern><that>_ difficulty swallowing *</that><template>this is Dysphagia...consult doctor..this cannot be managed at home</template>
+      </category>
+      <category>
+        
+               <pattern>no</pattern><that>_ difficulty swallowing *</that><template>take xyzal tablet while going to bed for 3 days and dolo 2 times a day</template>
+      </category>
+      
+   </topic>
+   
+</aiml>

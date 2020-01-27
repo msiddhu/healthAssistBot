@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+    
+   <category>
+      <pattern> # Stomach pain # </pattern><template>Ok.Let me help you with your Stomach pain. Please answer the following questions.<think><set name = "topic">Stomach pain</set></think></template>  
+   </category>
+   
+   <topic name = "Stomach pain">
+      <category>
+               <pattern> # ok # </pattern>
+               <template>How long has this been troubling you  
+                                                       1.Less than one day 
+                                                       2.One day to one week 
+                                                       3.One week to one month 
+                                                       4.More than one month.... Select any number:</template>
+      </category>
+      
+      <category>
+               <pattern>4</pattern><template>It might be a severe problem .Consult to a doctor as soon as possible.</template>
+      </category>
+      
+      <category>
+               <pattern>2</pattern><template>How would you describe the intensity of your Stomach pain (mild,moderate,severe)</template>
+      </category> 
+      
+      <category>
+               <pattern>3</pattern><template><srai>2</srai></template>
+      </category>
+      
+      <category>
+               <pattern>1</pattern><template><srai>2</srai></template>
+      </category>
+      
+      <category>
+               <pattern>severe</pattern><that>_ intensity *</that><template><srai>4</srai></template>
+      </category> 
+      
+      <category>
+               <pattern>mild</pattern><that>_ intensity *</that><template>It's not a big problem jst take loperamide (Imodium) or bismuth subsalicylate (Kaopectate or Pepto-Bismol) :)</template>
+      </category> 
+      
+      <category>
+               <pattern>moderate</pattern><that>_ intensity *</that><template>Where is the pain located within the abdomen
+                                                                              1.All over the abdomen 
+                                                                              2.In the specific part of abdomen..</template>
+      </category> 
+      
+      <category>
+               <pattern>1</pattern><that>_ located *</that><template>Do you also have atleast one among the following symptoms: Diarrhoea Do your stools looser than usual (Yes/NO) </template>
+      </category>
+      
+       <category>
+              <pattern>Yes</pattern><that>_ atleast one among *</that><template>Does the diarrhoea seems to be extremly watery(Yes or NO)</template>
+      
+      </category>
+      
+      <category>
+               <pattern>Yes</pattern><that>_ watery *</that><template>Does the diarrhoea contains blood(Yes/No)</template>
+              
+      </category>
+      
+       <category>
+               <pattern>NO</pattern><that> _ watery *</that><template><srai>Yes</srai></template>
+      </category>
+
+     <category>
+             <pattern>Yes</pattern><that> _ blood * </that><template> This are symptoms for dysentery caused by bacterial infection... you will be probably start with a 10-day course of an antimicrobial medication, such as Flagyl (metronidazole). Diloxanide furoate, paromomycin , or iodoquinol, depending on the severity of symptoms..SO IT IS BETTER TO CONSULT A DOCTOR!!</template>
+     </category>
+     
+      <category>
+               <pattern>NO</pattern><that>_ blood *</that><template>This are symptoms for normal diarrhoea take some drugs which  include (codeine phosphate, co-phenotrope, loperamide, and kaolin and morphine mixture)</template>
+      </category>
+     
+     <category>
+             <pattern>Yes</pattern><that></that>
+     </category>
+     
+       <category>
+               <pattern>2</pattern><that>_ located *</that><template>Please select position of pain   
+                                                                     1.Area above the stomach or Upper right side or Upper left side or Lower right side or Around the belly button 
+                                                                     2.Lower left side 
+                                                                     3.In the pelvic region .. </template>
+      </category>
+      
+      <category>
+              <pattern>1</pattern><that> _ of pain *</that><template> Do you have any other Symptoms like 
+                                                                                 =>Abdominal pain migration 
+                                                                                 =>Sharp pain 
+                                                                                 =>Mild-Abdominal pain(Yes/No) </template>
+      </category>
+      
+      <category>
+               <pattern>Yes</pattern><that> _ other Symptoms like * </that><template>This are symptoms for appendix..Consult a doctor as soon as possible!!</template>
+      </category>
+      
+      <category>
+            <pattern>no</pattern><that>_ other Symptoms like *</that><template>If you feel any inflammation these are symptoms for Gastritis so take  these drugs include the prescription and over-the-counter medications Taking antacids and other drugs (such as proton pump inhibitors or H-2 blockers) to reduce stomach acid. 
+                                                                                                                                                                                                                                                  Avoiding hot and spicy foods. 
+                                                                                                                                                                                                                                                  For gastritis caused by H. ...                                                                                                                                                                                                                                              If the gastritis is caused by pernicious anemia, B12 vitamin shots will be given. </template>
+      </category>
+      
+      <category>
+             <pattern>2</pattern><that>_ of pain *</that><template>These are symptoms of diverticulitis..treated using diet modifications, antibiotics, and possibly surgery. Mild diverticulitis infection may be treated with bed rest, stool softeners, a liquid diet, antibiotics to fight the infection, and possibly antispasmodic drugs.</template>
+      </category>
+      
+     <category>
+              <pattern>3</pattern><that>_ of pain *</that><template>Pelvic pain affects the lowest part of the abdomen, between the belly button and groin. In women, pelvic pain may be a sign of menstrual cramps, ovulation, or a gastrointestinal issue such as a food intolerance. It can also develop due to a more serious problem. ... When this is the case, a woman may need to see a doctor.Or for  lil pain you can take Take over-the-counter pain medicine like ibuprofen (Advil), naproxen (Aleve), or acetaminophen (Tylenol). ... 
+                                                                                                                                                                                                                                                                                                                                               Exercise. 
+                                                                                                                                                                                                                                                                                                                                               Take rest 
+                                                                                                                                                                                                                                                                                                                                               heating pad on your belly or lower back. 
+                                                                                                                                                                                                                                                                                                                                               Take a hot bath.</template>
+     </category> 
+     <category>
+           <pattern>no</pattern><that>_ atleast one among *</that><template>This is just a normal pain take acetaminophen (Aspirin Free Anacin, Liquiprin, Panadol, Tylenol) might be helpful. But stay away from non-steroidal anti-inflammatories (NSAIDs) like aspirin, ibuprofen (Advil, Midol, Motrin), or naproxen (Naprosyn, Aleve, Anaprox, Naprelan). They can irritate your stomach.Consult doctor if you dont feel well even after taking those medicine.. </template>
+     </category>
+      
+   </topic>
+   
+</aiml>

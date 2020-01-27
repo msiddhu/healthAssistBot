@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+    
+     <!--  Every yes and No patterns can be written in same catagory using <condition> tag to reduce the lines of code -->
+     
+      <!-- use <srai> tag for recursion (i.e.like a loop) to reduce size ot the code -->
+      
+      <!-- Better to avoid (not mandatory) using <sari> tag to pass to a pattern having <that> tag to  -->
+      
+      <!-- use <br> tag for new line  -->
+    
+   <category>
+      <pattern> # cold # </pattern><template>Ok.Let me help you with your cold. Please answer the following questions.<think><set name = "topic">cold</set></think></template>  
+   </category>
+   
+   <topic name = "cold">
+      <category>
+               <pattern> # ok # </pattern><template>How long has this been troubling you  
+               1)Less than one day 
+               2)One day to one week 
+               3)More than one week 
+               Enter the serial number :</template>
+      </category>
+      
+      <category>
+               <pattern># 3 #</pattern><template><srai># 2 #</srai>.</template>
+      </category>
+      
+      <category>
+               <pattern># 2 #</pattern><template>How would you describe the intensity of your headache (mild,moderate,severe)</template>
+      </category> 
+      
+      <category>
+               <pattern>severe</pattern><that>_ intensity *</that><template>Do you have more intense pain and fatigue (Yes/No) ?</template>
+      </category> 
+      
+      <category>
+               <pattern>mild</pattern><that>_ intensity *</that><template>Do you have a runny or stuffy nose?</template>
+      </category> 
+      
+      <category>
+               <pattern>moderate</pattern><that>_ intensity *</that><template>Do you have a runny or stuffy nose?</template>
+      </category> 
+      
+      <category>
+               <pattern>*</pattern><that>_ runny *</that><template>Ok. Do you also have atleast two or more of the following symptoms:  "Stuffed-up" nose Runny nose Loss of smell Cough or sneezing Fever Bad breath Fatigue (Yes/NO) ?</template>
+      </category>
+      
+      <category>
+               <pattern>*</pattern><that>_ pain *</that><template>Ok. Do you also have atleast two or more of the following symptoms:  "Stuffed-up" nose Runny nose Loss of smell Cough or sneezing Fever Fatigue (Yes/NO) ?</template>
+      </category>
+      
+      <category>
+               <pattern>Yes</pattern><that>_ atleast two or more *</that><template>cold may be due to sinus.Some of the primary medication that you can take care are <srai>1111111111</srai> </template>
+      </category>
+     
+     <!-- infinite loop . only exits when exit is entered -->
+     
+      <category>
+               <pattern>1111111111</pattern><template> 
+               1)Saline nasal spray 
+               2)Nasal corticosteroids. 
+               3)Decongestants. 
+               4)OTC pain relievers. 
+               5)Antibiotics. 
+               6)Immunotherapy. 
+               To know about sinus primary medications briefly enter their serial number or type "exit" (without votes) to move out from primary medications of Sinus:</template>
+      </category>
+               
+      <category>
+               <pattern># 1 #</pattern><that>_ sinus primary medications *</that><template>Saline nasal spray :- which you spray into your nose several times a day to rinse your nasal passages. <srai>1111111111</srai></template>
+      </category>
+      
+      <category>
+               <pattern># 2 #</pattern><that>_ sinus primary medications *</that><template>Nasal corticosteroids :- These nasal sprays help prevent and treat inflammation. Examples include fluticasone (Flonase Allergy Relief, Flonase Sensimist Allergy Relief, others), budesonide (Rhinocort Allergy), mometasone (Nasonex) and beclomethasone (Beconase AQ, Qnasl, others). <srai>1111111111</srai></template>
+      </category>
+      
+      <category>
+               <pattern># 3 #</pattern><that>_ sinus primary medications *</that><template>Decongestants :- These medications are available in over-the-counter (OTC) and prescription liquids, tablets and nasal sprays. Use nasal decongestants for only a few days. Otherwise they may cause the return of more-severe congestion (rebound congestion). <srai>1111111111</srai></template>
+      </category>
+      
+      <category>
+               <pattern># 4 #</pattern><that>_ sinus primary medications *</that><template>OTC pain relievers :- OTC pain relievers such as acetaminophen (Tylenol, others), ibuprofen (Advil, Motrin IB, others) or aspirin. Use caution when giving aspirin to children or teenagers. Children and teenagers recovering from chickenpox or flu-like symptoms should never take aspirin. This is because aspirin has been linked to Reye's syndrome, a rare but potentially life-threatening condition, in such children. <srai>1111111111</srai></template>
+      </category>
+      
+      <category>
+               <pattern># 5 #</pattern><that>_ sinus primary medications *</that><template>Antibiotics :- Antibiotics usually aren't needed to treat acute sinusitis. Even if your acute sinusitis is bacterial, it may clear up without treatment. Your doctor might wait and watch to see if your acute sinusitis worsens before prescribing antibiotics.  However, severe, progressive or persistent symptoms might require antibiotics. If your doctor prescribes an antibiotic, be sure to take the whole course, even after your symptoms get better. If you stop taking them early, your symptoms may recur. <srai>1111111111</srai></template>
+      </category>
+      
+      <category>
+               <pattern># 6 #</pattern><that>_ sinus primary medications *</that><template>Immunotherapy :- If allergies are contributing to your sinusitis, allergy shots (immunotherapy) that help reduce the body's reaction to specific allergens may help treat your symptoms. <srai>1111111111</srai></template>
+      </category>
+      
+      <category>
+               <pattern>No</pattern><that>_ atleast two or more *</that><template>Do you have cough or sore throat (Yes/No) ?</template>
+      </category>
+      
+      <category>
+               <pattern>Yes</pattern><that>_ cough *</that><template>Is it severe enough to interfere with routine activities (Yes/No) ?</template>
+      </category>
+      
+      <category>
+               <pattern>No</pattern><that>_ cough *</that><template>Do you have a feeling of congestion or fullness in your face (Yes/No) ?</template>
+      </category>
+      
+      <category>
+               <pattern>Yes</pattern><that>_ congestion or fullness *</that><template>Do you have nasal obstruction or nasal blockage (Yes/No) ?</template>
+      </category>
+      
+      <category>
+               <pattern>No</pattern><that>_ congestion or fullness *</that><template>It might be a serious problem .Consult to a doctor as soon as possible.  <srai>exit</srai></template>
+      </category>
+      
+      <category>
+               <pattern>No</pattern><that>_ nasal obstruction *</that><template>It might be a serious problem .Consult to a doctor as soon as possible.  <srai>exit</srai></template>
+      </category>
+      
+       <category>
+               <pattern>Yes</pattern><that>_ nasal obstruction *</that><template>It may be Chronic Sinusitis.Some of the primary medication that you can take care are <srai>4444444444</srai></template>
+      </category>
+      
+      <!-- infinite loop . only exits when exit is entered -->
+      
+      <category>
+               <pattern>4444444444</pattern><template> 
+               1)Saline nasal irrigation 
+               2)Nasal corticosteroids. 
+               3)Oral or injected corticosteroids.  
+               4)Aspirin desensitization treatment 
+               5)Antibiotics. 
+               6)Immunotherapy. 
+               To know about Chronic Sinusitis primary medications briefly enter their serial number or type "exit" (without votes) to move out from primary medications of Acute Sinusitis :</template>
+      </category>
+      
+      <category>
+               <pattern># 1 #</pattern><that>_ Chronic Sinusitis primary medications *</that><template>Saline nasal irrigation :- with nasal sprays or solutions, reduces drainage and rinses away irritants and allergies. <srai>4444444444</srai></template>
+      </category>
+      
+      <category>
+               <pattern># 2 #</pattern><that>_ Chronic Sinusitis primary medications *</that><template>Nasal corticosteroids :- These nasal sprays help prevent and treat inflammation. Examples include fluticasone, triamcinolone, budesonide, mometasone and beclomethasone. If the sprays aren't effective enough, your doctor might recommend rinsing with a solution of saline mixed with drops of budesonide or using a nasal mist of the solution. <srai>4444444444</srai></template>
+      </category>
+      
+      <category>
+               <pattern># 3 #</pattern><that>_ Chronic Sinusitis primary medications *</that><template>Oral or injected corticosteroids :- These medications are used to relieve inflammation from severe sinusitis, especially if you also have nasal polyps. Oral corticosteroids can cause serious side effects when used long term, so they're used only to treat severe symptoms. <srai>4444444444</srai></template>
+      </category>
+      
+      <category>
+               <pattern># 4 #</pattern><that>_ Chronic Sinusitis primary medications *</that><template>Aspirin desensitization treatment :- if you have reactions to aspirin that cause sinusitis. Under medical supervision, you're gradually given larger doses of aspirin to increase your tolerance. <srai>4444444444</srai></template>
+      </category>
+      
+      <category>
+               <pattern># 5 #</pattern><that>_ Chronic Sinusitis primary medications *</that><template>Antibiotics :- Antibiotics are sometimes necessary for sinusitis if you have a bacterial infection. If your doctor can't rule out an underlying infection, he or she might recommend an antibiotic, sometimes with other medications. <srai>4444444444</srai></template>
+      </category>
+      
+      <category>
+               <pattern># 6 #</pattern><that>_ Chronic Sinusitis primary medications *</that><template>Immunotherapy :- If allergies are contributing to your sinusitis, allergy shots (immunotherapy) that help reduce the body's reaction to specific allergens might improve the condition. <srai>4444444444</srai></template>
+      </category>
+      
+      <category>
+               <pattern>No</pattern><that>_  with routine *</that><template>Do you have a feeling of sneezing (Yes/No) ?</template>
+      </category>
+      
+      <category>
+               <pattern>Yes</pattern><that>_ sneezing *</that><template>It may be  flu caused by viruses.Some of the primary medication that you can take care are <srai>3333333333</srai> </template>
+      </category>
+      
+      <!-- infinite loop . only exits when exit is entered -->
+      
+      <category>
+               <pattern>3333333333</pattern><template> 
+               1)Pain relievers. 
+               2)Combination medications.  
+               3)Some general medications. 
+               To know about viral flu primary medications briefly enter their serial number or type "exit" (without votes) to move out from primary medications of tension-type headache :</template>
+      </category>
+      
+      <category>
+               <pattern># 1 #</pattern><that>_ viral flu primary medications *</that><template>Pain relievers :- Painkillers can relieve cold-related symptoms such as headache, earache and aching joints.the medicines such as Aspirin,ibuprofen and acetaminophen,paracetamol can relieve coldrelated symptoms <srai>3333333333</srai></template>
+      </category>
+      
+      <category>
+               <pattern># 2 #</pattern><that>_ viral flu primary medications *</that><template>Combination medications :-NyQuil or DayQuil are brand medications containing acetaminophen and dextromethorphan.Nyquil adds doxylamine succinate to help you sleep, DayQuil adds phenylephrine as a decongestant.  <srai>3333333333</srai></template>
+      </category>
+      
+      
+      <category>
+               <pattern># 3 #</pattern><that>_ viral flu primary medications *</that><template>Some general medications :-  
+               1)Rest more than usual. 
+               2)Drink lots of clear fluids  
+               3)Salt water nasal sprays can ease nasal congestion and thin mucus. 
+               4)Taking breaks from stressful situations 
+               5)Humidifiers and hot showers can help to moisten nasal passages and clear mucus.<srai>3333333333</srai></template>
+      </category>
+      
+      <category>
+               <pattern>No</pattern><that>_ sneezing *</that><template>It might be a serious problem .Consult to a doctor as soon as possible.  <srai>exit</srai></template>
+      </category>
+      
+      <category>
+               <pattern>Yes</pattern><that>_ severe *</that><template>Does it lasts for several hours (Yes/No) ?</template>
+      </category>
+      
+      <category>
+               <pattern>No</pattern><that>_ severe *</that><template>It might be a serious problem .Consult to a doctor as soon as possible.  <srai>exit</srai></template>
+      </category>
+      
+      <category>
+               <pattern>Yes</pattern><that>_ lasts for several *</that><template>It might be a viral flu.Some of the primary medication that you can take care are <srai>2222222222</srai></template>
+      </category>
+      
+      <!-- infinite loop . only exits when exit is entered -->
+      
+      <category>
+               <pattern>2222222222</pattern><template> 1)Pain relievers.  
+               2)Triptans. 
+               3)Dihydroergotamines (D.H.E. 45, Migranal).  
+               4)Lasmiditan (Reyvow).  
+               5)Ubrogepant (Ubrelvy).  
+               6)Opioid medications. 
+               7)Anti-nausea drugs. 
+               To know about viral flu primary medications briefly enter their serial number or type "exit" (without votes) to move out from primary medications of Migraine :</template>
+      </category>
+      
+      <category>
+               <pattern># 1 #</pattern><that>_ viral flu primary medications *</that><template>Pain relievers :- These over-the-counter or prescription pain relievers include aspirin or ibuprofen (Advil, Motrin IB, others). When taken too long, these might cause medication-overuse headaches, and possibly ulcers and bleeding in the gastrointestinal tract.  Migraine relief medications that combine caffeine, aspirin and acetaminophen (Excedrin Migraine) may be helpful, but usually only against mild migraine pain. <srai>2222222222</srai></template>
+      </category>
+      
+      <category>
+               <pattern># 2 #</pattern><that>_ viral flu primary medications *</that><template>Triptans :- These are prescription drugs such as sumatriptan (Imitrex, Tosymra) and rizatriptan (Maxalt) are prescription drugs used for migraine because they block pain pathways in the brain. Taken as pills, shots or nasal sprays, they can relieve many symptoms of migraine. They might not be safe for those at risk of a stroke or heart attack. <srai>2222222222</srai></template>
+      </category>
+      
+      <category>
+               <pattern># 3 #</pattern><that>_ viral flu primary medications *</that><template>Dihydroergotamines (D.H.E. 45, Migranal) :- Available as a nasal spray or injection, these are most effective when taken shortly after the start of migraine symptoms for migraines that tend to last longer than 24 hours. Side effects can include worsening of migraine-related vomiting and nausea.  People with coronary artery disease, high blood pressure, or kidney or liver disease should avoid dihydrogergotamines. <srai>2222222222</srai></template>
+      </category>
+      
+      <category>
+               <pattern># 4 #</pattern><that>_ viral flu primary medications *</that><template>Lasmiditan (Reyvow) :- This new oral tablet is approved for the treatment of migraine with or without aura. In drug trials, lasmiditan significantly improved pain as well as nausea and sensitivity to light and sound. Lasmiditan can have a sedative effect and cause dizziness, so people taking it are advised not to drive or operate machinery for at least eight hours. Lasmiditan also shouldn't be taken with alcohol or other drugs that depress the central nervous system. <srai>2222222222</srai></template>
+      </category>
+      
+      <category>
+               <pattern># 5 #</pattern><that>_ viral flu primary medications *</that><template>Ubrogepant (Ubrelvy) :- This oral calcitonin gene-related peptide receptor antagonist is approved for the treatment of acute migraine with or without aura in adults. It's the first drug of this type approved for migraine treatment. In drug trials, ubrogepant was more effective than placebo in relieving pain and other migraine symptoms such as nausea and sensitivity to light and sound two hours after taking it. Common side effects include dry mouth, nausea and excessive sleepiness. Ubrogepant should not be taken with strong CYP3A4 inhibitor drugs.  However, severe, progressive or persistent symptoms might require antibiotics. If your doctor prescribes an antibiotic, be sure to take the whole course, even after your symptoms get better. If you stop taking them early, your symptoms may recur. <srai>2222222222</srai></template>
+      </category>
+      
+      <category>
+               <pattern># 6 #</pattern><that>_ viral flu primary medications *</that><template>Opioid medications :- People who have migraines who can't take other migraine medications, narcotic opioid medications, especially those that contain codeine, might help. Because they can be highly addictive, these are usually used only if no other treatments are effective. <srai>2222222222</srai></template>
+      </category>
+      
+      <category>
+               <pattern># 7 #</pattern><that>_ viral flu primary medications *</that><template>Anti-nausea drugs :- These can help if your migraine with aura is accompanied by nausea and vomiting. Anti-nausea drugs include chlorpromazine, metoclopramide (Reglan) or prochlorperazine (Compro). These are usually taken with pain medications. <srai>2222222222</srai></template>
+      </category>
+      
+      <category>
+               <pattern># 1 #</pattern><template>Have you taken any medicine so far (Yes/No) ?</template>
+      </category>
+      
+      <category>
+               <pattern># Yes #</pattern><that>_ taken any medicine *</that><template><srai>2</srai></template>
+      </category>
+      
+      <category>
+               <pattern># no #</pattern><that>_ taken any medicine *</that><template>It might be due to viral or seasonal change.Take Aspirin for age above 19 or any similar medicine and rest.If the pain still continue come back to us.  <srai>exit</srai></template>
+      </category>
+      
+       <!-- All the conversation convergs to here for ending i.e. after any conversion user enters this block to exit  -->
+      
+      <category>
+               <pattern>exit</pattern><template>Do you want to know medications for prevention cold or the diseases releated to cold (Yes/No) ?</template>
+      </category>
+      
+      <category>
+               <pattern>Yes</pattern><that>_ medications for prevention *</that><template>Please Enter the serial number to know briefly about the prevention medications of the corresponding disease.<srai>5555555555</srai></template>
+      </category>
+      
+      <!-- infinite loop . only exits when exit is entered -->
+      
+      <category>
+               <pattern>5555555555</pattern><template> 
+               1)Congestion. 
+               2)Cough. 
+               3)Sore Throat.  
+               4)Some generel medications.  
+               To know about prevention medications briefly enter their serial number or type "Bye" (without votes) to exit :</template>
+      </category>
+      
+      <!-- you can use <random>,<li> tags if you want to give a single medication at a time -->
+      
+      <category>
+               <pattern># 1 #</pattern><that>_ prevention medications *</that><template>Prevention medications for Congestion:  
+               1)Be aware of early symptoms so you can try to stop the runny nose as soon as it begins. 
+               2)DonÃ¢â¬â¢t skip meals. 
+               4)Follow good sleep habits. 
+               5)top all over-the-counter medicines and herbal remedies. 
+               6)Maintain a regular eating and sleeping schedule. 
+               7)Exercise regularly. 
+               9)Improve your posture, possibly by adjusting your workstation. <srai>5555555555</srai></template>
+      </category>
+      
+      <category>
+               <pattern># 2 #</pattern><that>_ prevention medications *</that><template>Prevention medications for Cough.   
+               1)Take dextromethorphan if your cough is interfering with sleep or work. 
+               2)Use Triaminic Cold and Cough, Robitussin Cough, Vicks 44 Cough and Cold 
+               5)<srai>5555555555</srai></template>
+      </category>
+      
+      <category>
+               <pattern># 3 #</pattern><that>_ prevention medications *</that><template>prevention medications for Acute sinusitis :   
+               1) 
+               2)Drink lots of fluids. 
+               3)Rest. When you've got a sore throat infection, take it easier than normal. Get plenty of sleep and give it a chance to recover. 
+               4)Use warm heat with salt.It can take off some of the pressure.<srai>5555555555</srai></template>
+      </category>
+      
+      <category>
+               <pattern># 4 #</pattern><that>_ prevention medications *</that><template>Some general medications :-   
+               1)Rest more than usual. 
+               2))Drink lots of clear fluids 
+               3)Salt water nasal sprays can ease nasal congestion and thin mucus. 
+               4)Taking breaks from stressful situations 
+               5)Humidifiers and hot showers can help to moisten nasal passages and clear mucus<srai>5555555555</srai></template>
+      </category>
+      
+      <category>
+               <pattern>Bye</pattern><that>_ prevention medications *</that><template>Ok Bye, take care of your health. You can contact us when ever needed </template>
+      </category>
+      
+      <category>
+               <pattern>No</pattern><that>_ medications for prevention *</that><template>Ok. Bye, take care of your health. You can contact us when ever needed </template>
+      </category>
+      
+   </topic>
+   
+</aiml>

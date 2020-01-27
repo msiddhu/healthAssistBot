@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+ 
+   <category>
+      <pattern> # allergy # </pattern><template>Ok.Let me help you with your allergy. Please answer the following questions.(enter ok to proceed)</template>
+   </category>
+   <category>
+      <pattern>ok</pattern><template>which of the following is ur problem(rash on face,rash on handsds,rash on trunk)</template>
+   </category>
+    <category>
+      <pattern>rash on face</pattern><template>How long has this been troubling you(Less than one day,One day to one week)
+<think><set name = "topic">rash on face</set></think></template>
+   </category>
+   <category>
+      <pattern>rash on hands</pattern><template>How long has this been troubling you(Less than one day,One day to one week)
+<think><set name = "topic">rash on hands</set></think></template>
+   </category>
+   <category>
+      <pattern>rash on trunk</pattern><template>How long has this been troubling you(Less than one day,One day to one week)
+<think><set name = "topic">rash on trunk</set></think></template>
+   </category>
+   <topic name = "rash on face">
+      
+      <category>
+               <pattern> Less than one day</pattern><template>is it painful(yes/no)</template>
+      </category>
+      <category>
+               <pattern>yes</pattern><that>_ painful *</that><template>is that rash itchy(yes/no)</template>
+      </category>
+      <category>
+               <pattern>no</pattern><that>_ painful *</that><template><srai>yes</srai></template>
+      </category>
+      <category>
+               <pattern>yes</pattern><that>_ rash itchy * </that><template>does it temporarily fade when u press it(yes/no)</template>
+      </category>
+      <category>
+               <pattern>yes</pattern><that>_ fade when u press *</that><template>is ur rash raised or bumpy</template>
+      </category> 
+      
+      <category>
+               <pattern>no</pattern><that>_ rash itchy * </that><template><srai>yes</srai></template>
+      </category>
+      <category>
+               <pattern>no</pattern><that>_ fade when u press *</that><template><srai>yes</srai></template>
+      </category> 
+      <category>
+               <pattern> # raised #</pattern><that>_ or bumpy</that><template>it may be due to sunburn or pollution ...use sunscreen lotion for protection   use one of the following  
+1.Antihistamines  
+2.Corticosteroids  
+ 3.Cold compress.</template>
+      </category>
+       <category>
+               <pattern> # bumpy #</pattern><that>_ or bumpy</that><template><srai> # raised #</srai></template>
+      </category>
+      
+      <category>
+               <pattern>One day to one week</pattern><template><srai>less than one day</srai></template>
+               </category> 
+      
+      
+      </topic>
+      <topic name = "rash on hands">
+      
+      
+      <category>
+               <pattern> Less than one day</pattern><template>is it painful(yes/no)</template>
+      </category>
+      <category>
+               <pattern>yes</pattern><that>_  it painful *</that><template>is that rash itchy(yes/no)</template>
+      </category>
+      <category>
+               <pattern>no</pattern><that>_  it painful *</that><template><srai>yes</srai></template>
+      </category>
+      <category>
+               <pattern>yes</pattern><that>_ rash itchy * </that><template>does it temporarily fade when u press it(yes/no)</template>
+      </category>
+      <category>
+               <pattern>yes</pattern><that>_ fade *</that><template>is ur rash raised or bumpy</template>
+      </category>
+      <category>
+               <pattern>no</pattern><that>_ fade *</that><template>is ur rash raised or bumpy</template>
+      </category>
+      <category>
+               <pattern>no</pattern><that>_ rash itchy * </that><template><srai>yes</srai></template>
+      </category>
+      <category>
+               <pattern> # no #</pattern><that>_ or bumpy</that><template>do u have fluid filled bubbles on ur face(yes/no)</template>
+      </category>
+      <category>
+               <pattern> # yes #</pattern><that>_ or bumpy</that><template>do u have fluid filled bubbles on ur face(yes/no)</template>
+      </category>
+      <category>
+               <pattern> # raised #</pattern><that>_ or bumpy</that><template>do u have fluid filled bubbles on ur face(yes/no)</template>
+      </category>
+      <category>
+               <pattern>yes</pattern><that>_ filled bubbles *</that><template>do u have fever(yes/no)</template>
+      </category>
+            <category>
+               <pattern>no</pattern><that>_ filled bubbles *</that><template>do u have fever(yes/no)</template>
+      </category>
+      <category>
+               <pattern>yes</pattern><that>_ fever *</that><template>it may be flu .....take rest and drink more water ....take paractamol</template>
+      </category>
+      
+      <category>
+               <pattern>no</pattern><that>_ fever *</that><template>it may be due to sunburn or pollution ...use sunscreen lotion for protection   use one of the following 
+ 1.Antihistamines 
+ 2.Corticosteroids
+   3.Cold compress.</template>
+      </category>
+       <category>
+               <pattern>_ bumpy *</pattern><that>_ or bumpy</that><template><srai>_ raised *</srai></template>
+      </category>
+      
+      <category>
+               <pattern>One day to one week</pattern><template><srai>Less than one day</srai></template>
+      </category>
+      
+    </topic>
+     <topic name = "rash on trunk">
+      
+      
+      <category>
+               <pattern> Less than one day</pattern><template>is it painful(yes/no)</template>
+      </category>
+      <category>
+               <pattern>yes</pattern><that>_  it painful *</that><template>is that rash itchy(yes/no)</template>
+      </category>
+      <category>
+               <pattern>no</pattern><that>_  it painful *</that><template><srai>yes</srai></template>
+      </category>
+      <category>
+               <pattern>yes</pattern><that>_ rash itchy * </that><template>does it temporarily fade when u press it(yes/no)</template>
+      </category>
+      <category>
+               <pattern>yes</pattern><that>_ fade *</that><template>is ur rash raised or bumpy</template>
+      </category>
+      <category>
+               <pattern>no</pattern><that>_ fade *</that><template>is ur rash raised or bumpy</template>
+      </category>
+      <category>
+               <pattern>no</pattern><that>_ rash itchy * </that><template><srai>yes</srai></template>
+      </category>
+      <category>
+               <pattern> # yes #</pattern><that>_ or bumpy</that><template>do u have fluid filled bubbles on ur face(yes/no)</template>
+      </category>
+      <category>
+               <pattern> # no #</pattern><that>_ or bumpy</that><template>do u have fluid filled bubbles on ur face(yes/no)</template>
+      </category>
+      <category>
+               <pattern> # raised #</pattern><that>_ or bumpy</that><template>do u have fluid filled bubbles on ur face(yes/no)</template>
+      </category>
+      <category>
+               <pattern>yes</pattern><that>_ filled bubbles *</that><template>do u have fever(yes/no)</template>
+      </category>
+            <category>
+               <pattern>no</pattern><that>_ filled bubbles *</that><template>do u have fever(yes/no)</template>
+      </category>
+      <category>
+               <pattern>yes</pattern><that>_ fever *</that><template>Apply an over-the-counter hydrocortisone cream to the affected area if the rash is very itchy and causing discomfort   Calamine lotion can also help relieve rashes </template></category>
+      
+      <category>
+               <pattern>no</pattern><that>_ fever *</that><template>it may be due to sunburn or pollution ...use sunscreen lotion for protection   use one of the following 
+ 1.Antihistamines  
+2.Corticosteroids   
+3.Cold compress.</template>
+      </category>
+       <category>
+               <pattern>_ bumpy *</pattern><that>_ or bumpy</that><template><srai>_ raised *</srai></template>
+      </category>
+      
+      <category>
+               <pattern>One day to one week</pattern><template><srai>Less than one day</srai></template>
+      </category>
+      
+    </topic>
+   
+</aiml>
