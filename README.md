@@ -1,4 +1,4 @@
 # ChatBot
 A simple Chatbot App using Java and AIML. 
-![Thumbnail](botpic1.jpg=160*90)
-![botpic2](botpic2.jpg=160*90)
+![Thumbnail](botpic1.jpg)
+![botpic2](botpic2.jpg)
